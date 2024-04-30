@@ -1,7 +1,19 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 
 function Home() {
+
+
+  useEffect(() => {
+    const text = document.querySelector(".circle-text p");
+    const characters = text.innerText.split("");
+    text.innerHTML = characters
+      .map(
+        (char, i) =>
+          `<span style="transform: rotate(${i * (360 / characters.length)}deg)">${char}</span>`
+      )
+      .join("");
+  }, []);
 
    
   return (
@@ -19,11 +31,15 @@ function Home() {
             </svg>
 
             <li>
-              <h2 className=" text-white text-2xl font-extrabold font-display">
+              <h2 className=" text-white text-2xl ml-[350px] font-extrabold font-display">
                 DIGEAI
               </h2>
             </li>
-            <li></li>
+            <li className="  w-[400px]">
+              <div className=" bg-[#FCBF4D] w-[710px] h-[70px] mr-[10px] flex   transform rotate-45">
+                <h1 className=" font-!normal h-full w-1/2 mx-auto text-3xl mt-3.5 uppercase ">Digital•digital•digital•digital•</h1>
+              </div>
+            </li>
           </div>
         </div>
       </nav>
@@ -52,16 +68,20 @@ function Home() {
           </div>
           <div className="   w-[48.5%] h-[59.5%] flex border-b-4  "></div>
           <div className="  w-[100px] flex ml-4">
-            <div className=" bg-white rounded-full h-24 w-24 flex  mt-16 mx-auto  ">
+            <div className=" bg-white rounded-full w-[200px] h-[200px]  flex ">
+            <div className=" circle   ">
+              <div className="circle-text ">
+                <p className=" font-display font-normal">LEARN•MORE•LEARN•MORE•</p>
+              </div>
                 
-              <div className=" bg-yellow-400 rounded-full h-16 w-16 mx-auto my-auto flex border-2 border-black">
+              <div className=" bg-[#FCBF4D] rounded-full h-36 w-36 mx-auto my-auto flex border-2 border-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={0.5}
                   stroke="currentColor"
-                  className="h-10 w-10 my-auto mx-auto"
+                  className="h-18 w-18 my-auto mx-auto"
                 >
                   <path
                     strokeLinecap="round"
@@ -70,6 +90,7 @@ function Home() {
                   />
                 </svg>
               </div>
+            </div>
             </div>
           </div>
         </div>
